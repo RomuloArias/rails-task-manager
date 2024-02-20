@@ -1,0 +1,18 @@
+ <h2 class="text-center">Edit Task</h2>
+ <div class="container">
+  <div class="row justify-content-center p-3 m-3">
+  <div class="col-12 col-lg-6">
+     <%= form_with model: @task, url: task_path(@task), method: :patch do |form| %>
+     <%= form.label :title %>
+     <%= form.text_field :title %><br>
+
+    <%= form.label :details %>
+     <%= form.text_area :details %><br>
+
+     <%= form.label :completed %>
+     <%= form.check_box :completed %><br>
+     <%= form.submit "Update Task" %>
+     <% end %>
+    </div>
+    </div>
+  </div>

@@ -1,0 +1,11 @@
+  <div class="container">
+  <div class="border">
+<h2 class="text-center p-3"><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<!-- Display completion status -->
+<p>Completed: <%= @task.completed ? "Yes" : "No" %></p>
+<%= link_to "Edit", edit_task_path(@task) %> |
+<!--Link to go back to the task list -->
+<%= link_to "Back to Task List", tasks_path %>
+</div>
+</div>

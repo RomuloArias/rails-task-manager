@@ -1,0 +1,21 @@
+  <div class="container">
+    <h1 class="text-center p-3">Daily Tasks</h1>
+    <div class="border">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-lg-6">
+          <ul class="list-unstyled">
+            <% @tasks.each do |task| %>
+              <li class="d-flex align-items-center justify-content-between p-3">
+                <%= check_box_tag "task_#{task.id}", "completed", task.completed, disabled: true, class: "mr-3" %>
+                <%= link_to task.title, task_path(task) %>
+                <%= form_with model: task, url: task_path(task), method: :delete, html: { class: "ml-auto" } do |form| %>
+                  <%= form.submit "Delete", class: "btn btn-danger btn-sm" %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <%= link_to "New Task", new_task_path, class: "btn btn-primary btn-sm mt-3" %>
+      </div>
